@@ -5,14 +5,14 @@ contract ErrorHandlingExample {
   address public owner;
   uint256 public value;
   
-  construct() {
+  constructor() {
     owner = msg.sender;
     value = 100;
   }
   
   function setvalue(uint256 newvalue) public{
     //use require()
-    require(msg.sender == owner, "only owner can set the value);
+    require(msg.sender == owner, "only owner can set the value");
     require(newvalue > value, "new value must be greater than the current value");
 
     value = newvalue;
@@ -34,3 +34,4 @@ contract ErrorHandlingExample {
 
     return "Transaction Successful";
   }
+}
