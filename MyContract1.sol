@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.10;
 
 contract ErrorHandlingExample {
   address public owner;
@@ -26,9 +26,9 @@ contract ErrorHandlingExample {
     return result;
   }
 
-  function triggerrevert(bool torevert) public pure returns(string memory) {
+  function triggerrevert(uint256 torevert) public pure returns(string memory) {
     //use revert()
-    if(torevert == false) {
+    if(torevert < false) {
       revert("the transaction is intentionally reverted");
     }
 
